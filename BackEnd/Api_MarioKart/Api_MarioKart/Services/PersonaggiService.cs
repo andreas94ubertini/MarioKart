@@ -21,6 +21,8 @@ namespace Api_MarioKart.Services
 
                 Cod = p.Codice,
 
+                Nom = p.Nome,
+
                 Cat = p.Categoria,
 
                 Img = p.Img,
@@ -39,10 +41,9 @@ namespace Api_MarioKart.Services
             {
                 Categoria = p.Cat,
                 Codice = Guid.NewGuid().ToString().ToUpper(),
+                Nome = p.Nom,
                 Costo = p.Cos,
                 Img = p.Img,
-                SquadraRif = p.SquadRif,
-                SquadraRifNavigation = p.Squad
             };
 
             return _repository.Create(per);

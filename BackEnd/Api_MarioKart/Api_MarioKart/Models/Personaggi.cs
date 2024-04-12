@@ -7,6 +7,7 @@ public partial class Personaggi
 {
     public int PersonaggioId { get; set; }
 
+    public string Nome { get; set; } = null!;
     public int Costo { get; set; }
 
     public string? Codice { get; set; }

@@ -9,6 +9,7 @@ namespace Api_MarioKart.Dto
 
         public string? Cod { get; set; }
 
+        public string Nom { get; set; } = null!;
         public string Cat { get; set; } = null!;
 
         public string? Img { get; set; }

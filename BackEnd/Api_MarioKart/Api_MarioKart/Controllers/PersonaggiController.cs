@@ -22,7 +22,7 @@ namespace Api_MarioKart.Controllers
         }
 
         [HttpPost("inserisci")]
-        public IActionResult InserisciProdotto(PersonaggiDto objPer)
+        public IActionResult InserisciPersonaggio(PersonaggiDto objPer)
         {
             if (_service.InsertPersonaggio(objPer))
             {
