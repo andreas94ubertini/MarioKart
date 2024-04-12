@@ -14,8 +14,6 @@ namespace Api_MarioKart.Dto
 
         public string? Img { get; set; }
 
-        public int? SquadRif { get; set; }
-
-        public Squadra? Squad { get; set; }
+        public Squadra Squad { get; set; } = null!;
     }
 }

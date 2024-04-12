@@ -50,7 +50,7 @@ namespace Api_MarioKart.Repo
 
         public Squadra? GetByCod(string codice)
         {
-            return _context.Squadra.FirstOrDefault(p => p.Codice == codice);
+            return _context.Squadra.Include(p=>p.Personaggis).FirstOrDefault(p => p.Codice == codice);
 
         }
 

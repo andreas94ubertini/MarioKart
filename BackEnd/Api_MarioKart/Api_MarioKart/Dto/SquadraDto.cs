@@ -13,6 +13,6 @@ namespace Api_MarioKart.Dto
 
         public string? Cod { get; set; }
 
-        public List<Personaggi> Perso { get; set; } = new List<Personaggi>();
+        public List<PersonaggiDto> Perso { get; set; } = new List<PersonaggiDto>();
     }
 }

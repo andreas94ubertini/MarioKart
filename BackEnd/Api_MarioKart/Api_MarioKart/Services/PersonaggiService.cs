@@ -13,6 +13,17 @@ namespace Api_MarioKart.Services
             _repository = repository;
         }
 
+        private SquadraDto TransformSquad(Squadra s)
+        {
+            SquadraDto? sq = new SquadraDto()
+            {
+                Nom = s.NomeUtente,
+                NomSquad = s.NomeSquadra,
+                Cod = s.Codice,
+                Cred = s.Crediti
+            };
+            return sq;
+        }
         public List<PersonaggiDto> GetAllPer()
         {
             List<PersonaggiDto> elenco = _repository.GetAll().Select(p => new PersonaggiDto()
@@ -26,9 +37,7 @@ namespace Api_MarioKart.Services
                 Cat = p.Categoria,
 
                 Img = p.Img,
-
-                SquadRif = p.SquadraRif,
-
+                
                 Squad = p.SquadraRifNavigation
             }).ToList();
 

@@ -18,4 +18,6 @@ public partial class Squadra
     public string? Codice { get; set; }
     [JsonIgnore]
     public List<Personaggi> Personaggis { get; set; } = new List<Personaggi>();
+
+
 }

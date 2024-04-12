@@ -1,4 +1,5 @@
 ﻿using Api_MarioKart.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Api_MarioKart.Repo
 {
@@ -43,7 +44,7 @@ namespace Api_MarioKart.Repo
 
         public IEnumerable<Personaggi> GetAll()
         {
-            return _context.Personaggi.ToList();
+            return _context.Personaggi.Include(p=>p.SquadraRifNavigation).ToList();
         }
 
         public Personaggi? GetByCod(string codice)
