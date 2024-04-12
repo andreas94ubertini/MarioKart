@@ -50,6 +50,7 @@ namespace Api_MarioKart.Services
             {
                 Squadra? squad = _repository.GetByCod(s.Cod);
                 if (squad != null)
+                    squad.Personaggis = s.Perso;
                     return _repository.Update(squad);
             }
             return false;
