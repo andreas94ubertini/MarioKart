@@ -23,7 +23,7 @@ namespace Api_MarioKart.Controllers
         }
 
         [HttpPost("inserisci")]
-        public IActionResult InserisciPersonaggio(SquadraDto objSq)
+        public IActionResult InserisciSquadra(SquadraDto objSq)
         {
             if (_service.InsertSquadra(objSq))
             {
@@ -34,13 +34,21 @@ namespace Api_MarioKart.Controllers
         }
 
         [HttpPost("modifica")]
-        public IActionResult ModificaPersonaggio(SquadraDto objSq)
+        public IActionResult ModificaSquadra(SquadraDto objSq)
         {
             if (_service.ModifySquadra(objSq))
             {
                 return Ok();
             }
 
+            return BadRequest();
+        }
+
+        [HttpPost("addPer/{codPer}/{sqCod}")]
+        public IActionResult InsertIntoSquadra(string codPer, string sqCod)
+        {
+            if (_service.InsertPersonaggiIntoSquad(codPer, sqCod))
+                return Ok();
             return BadRequest();
         }
     }

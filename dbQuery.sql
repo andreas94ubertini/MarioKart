@@ -1,3 +1,6 @@
+Use MarioKart;
+DROP TABLE IF EXISTS Squadra;
+DROP TABLE IF EXISTS Personaggi;
 CREATE TABLE Squadra(
 	squadraID INT PRIMARY KEY IDENTITY (1,1),
 	nomeUtente VARCHAR(250) NOT NULL,
@@ -8,6 +11,7 @@ CREATE TABLE Squadra(
 
 CREATE TABLE Personaggi(
 	personaggioID INT PRIMARY KEY IDENTITY (1,1),
+	nome VARCHAR (250) NOT NULL,
 	costo INT NOT NULL,
 	codice VARCHAR (250) DEFAULT NEWID(),
 	categoria VARCHAR (50) NOT NULL,
@@ -16,3 +20,6 @@ CREATE TABLE Personaggi(
 	FOREIGN KEY (squadraRIF) REFERENCES Squadra(squadraID),
 	UNIQUE(codice, squadraRIF, categoria)
 );
+
+SELECT * FROM Personaggi;
+SELECT * FROM Squadra;
