@@ -31,5 +31,13 @@ namespace Api_MarioKart.Controllers
 
             return BadRequest();
         }
+
+        [HttpPost("modifica")]
+        public IActionResult ModificaPersonaggio(PersonaggiDto objPer)
+        {
+            if (_service.ModifyPersonaggio(objPer))
+                return Ok();
+            return BadRequest();
+        }
     }
 }

@@ -23,7 +23,9 @@ namespace Api_MarioKart
             builder.Configuration.GetConnectionString("DefaultConnection")));
 
             builder.Services.AddScoped<PersonaggiRepo>();
+            builder.Services.AddScoped<SquadraRepo>();
             builder.Services.AddScoped<PersonaggiService>();
+            builder.Services.AddScoped<SquadraService>();
             var app = builder.Build();
 
             app.UseCors(builder =>

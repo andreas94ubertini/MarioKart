@@ -29,13 +29,14 @@ namespace Api_MarioKart.Services
 
                 SquadRif = p.SquadraRif,
 
-                Squad= p.SquadraRifNavigation
+                Squad = p.SquadraRifNavigation
             }).ToList();
 
             return elenco;
         }
 
-        public bool InsertPersonaggio(PersonaggiDto p) {
+        public bool InsertPersonaggio(PersonaggiDto p)
+        {
 
             Personaggi per = new Personaggi()
             {
@@ -47,6 +48,16 @@ namespace Api_MarioKart.Services
             };
 
             return _repository.Create(per);
+        }
+        public bool ModifyPersonaggio(PersonaggiDto p)
+        {
+            if (p.Cod != null)
+            {
+                Personaggi? per = _repository.GetByCod(p.Cod);
+                if(per != null)
+                    return _repository.Update(per);
+            }
+            return false;
         }
     }
 }
