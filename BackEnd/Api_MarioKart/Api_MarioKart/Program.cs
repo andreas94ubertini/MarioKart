@@ -1,5 +1,7 @@
 
 using Api_MarioKart.Models;
+using Api_MarioKart.Repo;
+using Api_MarioKart.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace Api_MarioKart
@@ -20,6 +22,8 @@ namespace Api_MarioKart
             builder.Services.AddDbContext<MarioKartContext>(options => options.UseSqlServer(
             builder.Configuration.GetConnectionString("DefaultConnection")));
 
+            builder.Services.AddScoped<PersonaggiRepo>();
+            builder.Services.AddScoped<PersonaggiService>();
             var app = builder.Build();
 
             app.UseCors(builder =>
