@@ -6,10 +6,10 @@ export class Squadra {
     Cred: number|undefined;
     Cod: string|undefined;
     Pers: Personaggi[] = new Array();
-    constructor(nome?:string,nomeSquadra?:string,crediti?:number,codice?:string) {
+    constructor(nome?:string,nomeSquadra?:string) {
       this.Nom = nome;
       this.NomSquad = nomeSquadra;
-      this.Cred = crediti;
-      this.Cod = codice;
+      this.Cred = 10;
+      this.Cod = "SQ"+ new Date().getTime();
     }
 }

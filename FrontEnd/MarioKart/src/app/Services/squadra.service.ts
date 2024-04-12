@@ -36,5 +36,13 @@ export class SquadraService {
     })
     this.setLocal(this.SquadList);
   }
-
+  CheckIfExists(nome?:string):boolean{
+    let res = true;
+    this.SquadList.forEach(s=>{
+      if(s.NomSquad==nome)
+        res = false
+    })
+    return res;
+  }
+  //toDo prendi lista di Personaggi collegati a id
 }
