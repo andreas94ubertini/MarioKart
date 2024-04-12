@@ -5,16 +5,17 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Api_MarioKart.Controllers
 {
-    [Route("api/personaggi")]
+    [Route("api/[controller]")]
     [ApiController]
-    public class PersonaggiController : ControllerBase
+    public class SquadraController : ControllerBase
     {
-        private readonly PersonaggiService _service;
+        private readonly SquadraService _service;
 
-        public PersonaggiController(PersonaggiService service)
+        public SquadraController(SquadraService service)
         {
             _service = service;
         }
+
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -22,9 +23,9 @@ namespace Api_MarioKart.Controllers
         }
 
         [HttpPost("inserisci")]
-        public IActionResult InserisciPersonaggio(PersonaggiDto objPer)
+        public IActionResult InserisciPersonaggio(SquadraDto objSq)
         {
-            if (_service.InsertPersonaggio(objPer))
+            if (_service.InsertSquadra(objSq))
             {
                 return Ok();
             }
@@ -32,11 +33,14 @@ namespace Api_MarioKart.Controllers
             return BadRequest();
         }
 
-        [HttpPut("modifica")]
-        public IActionResult ModificaPersonaggio(PersonaggiDto objPer)
+        [HttpPost("modifica")]
+        public IActionResult ModificaPersonaggio(SquadraDto objSq)
         {
-            if (_service.ModifyPersonaggio(objPer))
+            if (_service.ModifySquadra(objSq))
+            {
                 return Ok();
+            }
+
             return BadRequest();
         }
     }

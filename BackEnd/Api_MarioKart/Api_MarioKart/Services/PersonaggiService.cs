@@ -54,8 +54,14 @@ namespace Api_MarioKart.Services
             if (p.Cod != null)
             {
                 Personaggi? per = _repository.GetByCod(p.Cod);
-                if(per != null)
+                if (per != null)
+                {
+                    per.Nome = p.Nom;
+                    per.Categoria = p.Cat;
+                    per.Costo = p.Cos;
+                    per.Img = p.Img;
                     return _repository.Update(per);
+                }
             }
             return false;
         }
