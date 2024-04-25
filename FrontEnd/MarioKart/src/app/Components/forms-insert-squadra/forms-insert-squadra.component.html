@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-12 mt-2">
+    <h2 class="text-center">Registra una nuova squadra</h2>
+  </div>
+  <div class="col border rounded-1 p-3 mt-3">
+    <div class="form-group d-flex flex-column">
+      <label for="NomeGiocatore" class="text-center">Nome Giocatore</label>
+      <input id="nomeGiocatore" class="form-control" [(ngModel)]="Nom">
+    </div>
+    <div class="form-group d-flex flex-column">
+      <label for="NomeSquadra" class="text-center">Nome Squadra</label>
+      <input id="NomeSquadra" class="form-control" [(ngModel)]="NomSquad">
+    </div>
+    <button type="button" class="btn btn-primary btn-block" (click)="SaveSquad()">Salva Squadra</button>
+  </div>
+</div>

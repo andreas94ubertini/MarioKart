@@ -11,16 +11,7 @@ export class SquadraService {
       localStorage.setItem("SquadList", JSON.stringify(this.SquadList))
     else
       this.SquadList = JSON.parse(localStorage.getItem("SquadList")!);
-    let prova: number[]= []
-    let counter: number = 0;
-    do{
-      console.log(prova[counter],"ciao do")
-      counter++
-    }while(counter<prova.length)
-    while(counter<prova.length){
-      console.log(prova[counter],"ciao while")
-      counter++
-    }
+
 
 
   }
